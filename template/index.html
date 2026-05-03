@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[PLACE_NAME]</title>
+  <meta name="description" content="[TAGLINE]" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-image">
+      <!-- Replace hero.jpg with your main photo -->
+      <img src="photos/hero.jpg" alt="[PLACE_NAME]" />
+    </div>
+    <div class="hero-content">
+      <h1>[PLACE_NAME]</h1>
+      <p class="tagline">[TAGLINE]</p>
+      <a class="btn-book" href="https://wa.me/[WHATSAPP_NUMBER]?text=[BOOKING_MESSAGE]" target="_blank">
+        Book a Stay
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-text">
+          <h2>The Place</h2>
+          <p>[PLACE_STORY]</p>
+        </div>
+        <div class="story-image">
+          <!-- Replace story.jpg with a portrait/detail photo -->
+          <img src="photos/story.jpg" alt="[PLACE_NAME]" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OWNER ===== -->
+  <section class="owner" id="owner">
+    <div class="container">
+      <div class="owner-grid">
+        <div class="owner-image">
+          <!-- Replace owner.jpg with owner portrait -->
+          <img src="photos/owner.jpg" alt="[OWNER_NAME]" />
+        </div>
+        <div class="owner-text">
+          <h2>Meet [OWNER_NAME]</h2>
+          <p>[OWNER_STORY]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2>The Property</h2>
+      <div class="gallery-grid">
+        <!-- Add or remove <figure> items as needed -->
+        <figure class="gallery-item" data-src="photos/gallery-1.jpg">
+          <img src="photos/gallery-1.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure class="gallery-item" data-src="photos/gallery-2.jpg">
+          <img src="photos/gallery-2.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure class="gallery-item" data-src="photos/gallery-3.jpg">
+          <img src="photos/gallery-3.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure class="gallery-item" data-src="photos/gallery-4.jpg">
+          <img src="photos/gallery-4.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure class="gallery-item" data-src="photos/gallery-5.jpg">
+          <img src="photos/gallery-5.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure class="gallery-item" data-src="photos/gallery-6.jpg">
+          <img src="photos/gallery-6.jpg" alt="" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FACILITIES ===== -->
+  <section class="facilities" id="facilities">
+    <div class="container">
+      <h2>What's Included</h2>
+      <ul class="facilities-list">
+        <!-- Edit these items to match the property -->
+        <li>
+          <span class="icon">🌿</span>
+          <span>[FACILITY_1]</span>
+        </li>
+        <li>
+          <span class="icon">🛏</span>
+          <span>[FACILITY_2]</span>
+        </li>
+        <li>
+          <span class="icon">🍳</span>
+          <span>[FACILITY_3]</span>
+        </li>
+        <li>
+          <span class="icon">🚿</span>
+          <span>[FACILITY_4]</span>
+        </li>
+        <li>
+          <span class="icon">🌅</span>
+          <span>[FACILITY_5]</span>
+        </li>
+        <li>
+          <span class="icon">📶</span>
+          <span>[FACILITY_6]</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== BOOK ===== -->
+  <section class="book" id="book">
+    <div class="container">
+      <h2>Ready to Stay?</h2>
+      <p>Reach [OWNER_NAME] directly on WhatsApp — no middleman, no fees.</p>
+      <a class="btn-book btn-book--large" href="https://wa.me/[WHATSAPP_NUMBER]?text=[BOOKING_MESSAGE]" target="_blank">
+        Message [OWNER_NAME] on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>[PLACE_NAME] &mdash; [LOCATION]</p>
+    <p class="footer-small">Site by <a href="https://github.com/yfelig/stay-barters" target="_blank">Stay Barters</a></p>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

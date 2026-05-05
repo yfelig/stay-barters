@@ -2,7 +2,7 @@
 
 | # | Property | Location | Dates | Live URL | Repo |
 |---|----------|----------|-------|----------|------|
-| 1 | *(first stay — in progress)* | | | | |
+| 1 | Aji Fruit Farm | Embilipitiya, Sri Lanka | May 2026 | [aji-fruit-farm.lk](https://aji-fruit-farm.lk) | [yfelig/ajis-mango-farm](https://github.com/yfelig/ajis-mango-farm) |
 
 ---
 

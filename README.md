@@ -80,9 +80,15 @@ template/
 
 ---
 
+## Full playbook
+
+See [`GUIDE.md`](GUIDE.md) for the complete step-by-step guide: interview questions, shot list, page structure, domain setup, design system, and lessons from the first build.
+
+---
+
 ## Stays log
 
-See [`stays/log.md`](stays/log.md) for all completed stays.
+See [`stays/log.md`](stays/log.md) for all completed stays. Each stay has its own file in `stays/` with full project history.
 
 ---
 

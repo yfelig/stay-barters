@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Stay Barters — The Playbook</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg:      #f9f7f3;
-    --dark:    #1b3826;
-    --text:    #18180f;
-    --muted:   #6b6856;
-    --border:  #ddd8ce;
-    --accent:  #c8952e;
-    --light:   #f0ede4;
+    --bg:     #f9f7f3;
+    --dark:   #1b3826;
+    --text:   #18180f;
+    --muted:  #6b6856;
+    --border: #ddd8ce;
+    --accent: #c8952e;
+    --light:  #f0ede4;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,268 +21,155 @@
     background: var(--bg);
     color: var(--text);
     font-family: 'Inter', sans-serif;
-    font-size: 10.5pt;
+    font-size: 9.5pt;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
-  /* COVER PAGE */
+  /* COVER */
   .cover {
     background: var(--dark);
     color: #fff;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 72px 64px;
+    padding: 64px 60px;
     page-break-after: always;
   }
-  .cover-eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 8pt;
+  .cover-eye {
+    font-size: 7.5pt;
     font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 24px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 20px;
   }
   .cover h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 64pt;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60pt;
     font-weight: 300;
-    line-height: 0.95;
+    line-height: 0.92;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
   .cover-sub {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16pt;
+    font-size: 14pt;
     font-style: italic;
     font-weight: 300;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 64px;
-    max-width: 480px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 52px;
     line-height: 1.5;
   }
-  .cover-rule {
-    width: 48px;
-    height: 1px;
-    background: rgba(255,255,255,0.3);
-    margin-bottom: 24px;
-  }
-  .cover-meta {
-    font-size: 8.5pt;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.1em;
-  }
+  .cover-rule { width: 40px; height: 1px; background: rgba(255,255,255,0.25); margin-bottom: 20px; }
+  .cover-meta { font-size: 8pt; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; }
 
-  /* CONTENT */
-  .content {
-    max-width: 680px;
+  /* PAGES */
+  .page {
+    max-width: 700px;
     margin: 0 auto;
-    padding: 64px 48px;
+    padding: 52px 52px 48px;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* HEADINGS */
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 28px;
   }
 
   h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 26pt;
+    font-size: 18pt;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    line-height: 1.1;
     color: var(--dark);
-    margin-top: 56px;
-    margin-bottom: 20px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
+    margin: 24px 0 10px;
   }
   h2:first-of-type { margin-top: 0; }
 
   h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15pt;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-top: 32px;
-    margin-bottom: 12px;
-  }
-
-  h4 {
-    font-family: 'Inter', sans-serif;
-    font-size: 8pt;
+    font-size: 7.5pt;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-top: 24px;
-    margin-bottom: 10px;
+    margin: 20px 0 8px;
   }
 
-  p {
-    color: var(--muted);
-    margin-bottom: 12px;
-    max-width: 62ch;
-  }
-
+  p { color: var(--muted); margin-bottom: 10px; }
   p strong { color: var(--text); font-weight: 500; }
 
-  ul, ol {
-    padding-left: 20px;
-    margin-bottom: 16px;
-  }
-  li {
-    color: var(--muted);
-    margin-bottom: 6px;
-    line-height: 1.65;
-  }
+  ul, ol { padding-left: 18px; margin-bottom: 12px; }
+  li { color: var(--muted); margin-bottom: 4px; line-height: 1.5; }
   li strong { color: var(--text); font-weight: 500; }
 
-  /* checkbox list items */
-  ul li:has(input) { list-style: none; margin-left: -20px; }
+  /* COLUMNS */
+  .cols { display: grid; gap: 32px; margin-bottom: 20px; }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 
-  /* TABLES */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0 28px;
-    font-size: 9.5pt;
-  }
-  th {
-    background: var(--dark);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 7.5pt;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 10px 14px;
-    text-align: left;
-  }
-  td {
-    padding: 9px 14px;
-    border-bottom: 1px solid var(--border);
-    color: var(--muted);
-    vertical-align: top;
-  }
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 8.5pt; }
+  th { background: var(--dark); color: #fff; font-size: 7pt; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 12px; text-align: left; }
+  td { padding: 7px 12px; border-bottom: 1px solid var(--border); color: var(--muted); vertical-align: top; }
   td strong { color: var(--text); font-weight: 500; }
   tr:nth-child(even) td { background: var(--light); }
   tr:last-child td { border-bottom: none; }
 
-  /* CODE BLOCKS */
+  /* CODE */
   pre {
     background: #1e2a22;
     color: #c8e6c9;
-    border-radius: 0;
-    padding: 20px 24px;
-    margin: 16px 0 24px;
-    font-size: 8.5pt;
-    line-height: 1.6;
-    overflow: hidden;
+    padding: 14px 18px;
+    margin: 8px 0 16px;
+    font-size: 7.5pt;
+    line-height: 1.55;
     white-space: pre-wrap;
     word-break: break-all;
   }
-  code {
-    font-family: 'Courier New', monospace;
-    font-size: 8.5pt;
-    background: var(--light);
-    color: var(--dark);
-    padding: 2px 5px;
-  }
-  pre code {
-    background: none;
-    color: inherit;
-    padding: 0;
-  }
+  code { font-family: 'Courier New', monospace; font-size: 8pt; background: var(--light); color: var(--dark); padding: 1px 4px; }
+  pre code { background: none; color: inherit; padding: 0; }
 
-  /* PULL / INTRO BLOCK */
-  .intro {
+  /* SCRIPT BOX */
+  .script {
     background: var(--dark);
-    color: #fff;
-    padding: 36px 40px;
-    margin-bottom: 48px;
-  }
-  .intro p {
+    color: rgba(255,255,255,0.85);
+    padding: 18px 24px;
+    margin: 10px 0 18px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 15pt;
+    font-size: 12pt;
     font-style: italic;
     font-weight: 300;
-    color: rgba(255,255,255,0.85);
-    max-width: none;
-    margin: 0;
-    line-height: 1.55;
+    line-height: 1.5;
   }
 
-  /* PHASE HEADER */
-  .phase {
-    background: var(--light);
-    border-left: 4px solid var(--dark);
-    padding: 18px 24px;
-    margin: 40px 0 20px;
-    page-break-inside: avoid;
-  }
-  .phase-number {
-    font-size: 7.5pt;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-  .phase-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20pt;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: var(--dark);
-    line-height: 1;
-  }
+  /* TIPS */
+  .tips { border-left: 3px solid var(--accent); padding: 12px 16px; margin: 14px 0; background: var(--light); }
+  .tips-label { font-size: 7pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .tips li { margin-bottom: 5px; }
 
-  /* TIPS BOX */
-  .tips {
-    border: 1px solid var(--border);
-    padding: 24px 28px;
-    margin: 28px 0;
-    page-break-inside: avoid;
-  }
-  .tips-label {
-    font-size: 7.5pt;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
-  }
-  .tips li { margin-bottom: 10px; }
+  /* PROMPT BOX */
+  .prompt { background: #1e2a22; color: #c8e6c9; padding: 12px 16px; margin: 8px 0 16px; font-size: 7.5pt; font-family: 'Courier New', monospace; line-height: 1.55; white-space: pre-wrap; word-break: break-all; }
 
-  /* RULE */
-  hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 40px 0;
-  }
-
-  /* COST TABLE */
-  .cost-row td:last-child {
-    text-align: right;
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  /* PAGE BREAKS */
-  .page-break { page-break-before: always; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 
   @media print {
     body { background: white; }
-    .cover { min-height: 100vh; }
-    h2 { page-break-after: avoid; }
-    h3 { page-break-after: avoid; }
-    table { page-break-inside: avoid; }
-    pre { page-break-inside: avoid; }
-    .phase { page-break-inside: avoid; }
+    .cover { height: 100vh; }
+    h2, h3 { page-break-after: avoid; }
+    table, pre, .tips, .prompt { page-break-inside: avoid; }
   }
 </style>
 </head>
@@ -291,373 +177,216 @@
 
 <!-- COVER -->
 <div class="cover">
-  <div class="cover-eyebrow">Stay Barters</div>
+  <div class="cover-eye">Stay Barters</div>
   <h1>The<br>Play<br>book</h1>
-  <p class="cover-sub">How to build a professional website for a place — in exchange for a free stay.</p>
+  <p class="cover-sub">Build a professional website for a place.<br>Get the stay for free.</p>
   <div class="cover-rule"></div>
-  <p class="cover-meta">Interview · Photography · Build · Launch · Handoff &nbsp;·&nbsp; May 2026</p>
+  <p class="cover-meta">Steps · Stack · Prompts · Tips &nbsp;·&nbsp; May 2026</p>
 </div>
 
-<!-- CONTENT -->
-<div class="content">
+<!-- PAGE 2 — STEPS + PITCH + INTERVIEW -->
+<div class="page">
+  <div class="page-title">The Playbook — Part 1</div>
 
-  <div class="intro">
-    <p>"You arrive as a guest, leave as a collaborator — the owner gets a website that drives direct bookings, you get the stay paid in skill."</p>
-  </div>
-
-  <!-- OVERVIEW -->
-  <h2>Overview</h2>
+  <h2>The Steps</h2>
   <table>
-    <tr><th>Phase</th><th>What happens</th><th>When</th></tr>
-    <tr><td><strong>1. Find</strong></td><td>Spot a property that would benefit</td><td>Before booking</td></tr>
-    <tr><td><strong>2. Pitch</strong></td><td>Propose the trade</td><td>Via email or in-person</td></tr>
-    <tr><td><strong>3. Prepare</strong></td><td>Research, plan the content</td><td>Before arrival</td></tr>
-    <tr><td><strong>4. Interview</strong></td><td>Capture the story</td><td>Day 1 of the stay</td></tr>
-    <tr><td><strong>5. Shoot</strong></td><td>Photograph everything</td><td>Days 1–2</td></tr>
-    <tr><td><strong>6. Build</strong></td><td>Code the site</td><td>During or after the stay</td></tr>
-    <tr><td><strong>7. Launch</strong></td><td>Domain, GitHub Pages, handoff</td><td>Final day or within a week</td></tr>
+    <tr><th>#</th><th>Phase</th><th>When</th></tr>
+    <tr><td><strong>1</strong></td><td>Find a place with a real story but no website</td><td>Before booking</td></tr>
+    <tr><td><strong>2</strong></td><td>Pitch the trade — stay for a website</td><td>WhatsApp or in-person</td></tr>
+    <tr><td><strong>3</strong></td><td>Interview the owner, photograph the property</td><td>Day 1–2 of stay</td></tr>
+    <tr><td><strong>4</strong></td><td>Build the site with Claude Code (vibe code it)</td><td>During or after stay</td></tr>
+    <tr><td><strong>5</strong></td><td>Buy domain, deploy to GitHub Pages, handoff</td><td>Within a week</td></tr>
   </table>
-  <p><strong>Typical stay needed:</strong> 2–3 nights minimum. Longer for complex properties.</p>
 
-  <!-- PHASE 1 -->
-  <div class="phase">
-    <div class="phase-number">Phase 1</div>
-    <div class="phase-title">Finding the Right Property</div>
+  <p><strong>Good candidates:</strong> On Airbnb but no standalone site. Unique story — farm, lake, family-run. Owner communicates personally. Not a resort.</p>
+
+  <h2>The Pitch</h2>
+  <div class="script">"I build websites for places I love. I'd like to trade — I'll build you a professional website that gets you direct bookings (no Airbnb commission), in exchange for [X nights]. You keep everything: the code, the domain, all of it."</div>
+  <p><strong>What they get:</strong> 4-page site · GitHub repo they own · custom domain (first year on you, ~$10–20) · handoff guide so they can update it themselves.</p>
+
+  <h2>Interview Questions</h2>
+  <div class="cols cols-2">
+    <div>
+      <h3>Origin story</h3>
+      <ul>
+        <li>How did you come to build this?</li>
+        <li>What was here before?</li>
+        <li>What changed along the way?</li>
+      </ul>
+      <h3>What makes it special</h3>
+      <ul>
+        <li>What do guests say when they leave?</li>
+        <li>What can't they get anywhere else nearby?</li>
+        <li>What do you want them to feel on arrival?</li>
+      </ul>
+      <h3>Honest expectations</h3>
+      <ul>
+        <li>What should guests know before arriving?</li>
+        <li>Who is this place <em>not</em> for?</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Practical info</h3>
+      <ul>
+        <li>What's included? (breakfast, transfers?)</li>
+        <li>Check-in / check-out times?</li>
+        <li>Activities on-site + nearby?</li>
+      </ul>
+      <h3>Booking</h3>
+      <ul>
+        <li>WhatsApp number (international format)?</li>
+        <li>Preferred booking message?</li>
+        <li>Minimum stay? Seasonal pricing?</li>
+      </ul>
+      <h3>Reviews + social</h3>
+      <ul>
+        <li>On Airbnb/TripAdvisor? Star rating?</li>
+        <li>Can I use quotes from your reviews?</li>
+        <li>Instagram or Facebook?</li>
+      </ul>
+    </div>
   </div>
-  <p>Look for places that have something real but no web presence (or a bad one):</p>
-  <h4>Good signs</h4>
-  <ul>
-    <li>Listed on Airbnb/Booking but no standalone website</li>
-    <li>Unique story or setting — farm, lake, jungle, family-run</li>
-    <li>Owner is hands-on and communicates personally</li>
-    <li>Reviews exist but guests have to dig to find them</li>
-    <li>Priced reasonably (not a 5-star resort — they already have agencies)</li>
-  </ul>
-  <h4>Red flags</h4>
-  <ul>
-    <li>Already has a good website → no trade value</li>
-    <li>Corporate-owned → no owner relationship</li>
-    <li>No personality / nothing to tell a story about</li>
-  </ul>
+</div>
 
-  <!-- PHASE 2 -->
-  <div class="phase">
-    <div class="phase-number">Phase 2</div>
-    <div class="phase-title">The Pitch</div>
-  </div>
-  <p>Keep it simple and human. This works best in person or over WhatsApp.</p>
-  <h4>What to say</h4>
-  <div class="tips">
-    <div class="tips-label">Script</div>
-    <p style="max-width:none; color: var(--text); font-style: italic;">"I build websites for places I love staying at. I'd like to trade — I'll build you a professional website that helps you get direct bookings (no Airbnb commission), in exchange for [X nights]. You keep everything — the code, the domain, all of it."</p>
-  </div>
-  <h4>What you're offering</h4>
-  <ul>
-    <li>A 4-page website with their story, photos, facilities, reviews, and a direct WhatsApp booking link</li>
-    <li>A GitHub repo they own forever</li>
-    <li>A custom domain (first year covered, ~$10–20)</li>
-    <li>A handoff guide so they can update it themselves</li>
-  </ul>
-  <p><strong>Typical trade:</strong> 2–4 nights depending on property size. Agree upfront.</p>
+<!-- PAGE 3 — PHOTOGRAPHY + STACK -->
+<div class="page">
+  <div class="page-title">The Playbook — Part 2</div>
 
-  <!-- PHASE 3 -->
-  <div class="phase">
-    <div class="phase-number">Phase 3</div>
-    <div class="phase-title">Preparation (Before Arrival)</div>
-  </div>
-  <ul>
-    <li>Check if they have existing Airbnb/Booking/TripAdvisor — note reviews, star rating, review count</li>
-    <li>Note any social media (Instagram, Facebook)</li>
-    <li>Think about the domain name (e.g. <code>aji-fruit-farm.lk</code>, <code>mamadwinery.com</code>)</li>
-    <li>Bring: a camera or phone with a good lens, tripod if possible, a notebook</li>
-    <li>Clone or copy the template folder, name it after the property</li>
-  </ul>
-
-  <!-- PHASE 4 -->
-  <div class="phase page-break">
-    <div class="phase-number">Phase 4</div>
-    <div class="phase-title">The Interview</div>
-  </div>
-  <p>Do this on Day 1. Record audio if they're comfortable, or take notes. Ask in their language if possible — translate later.</p>
-
-  <h3>Origin story</h3>
-  <ul>
-    <li>How long have you been running this place?</li>
-    <li>How did you come to own it / start this?</li>
-    <li>What was here before?</li>
-    <li>What changed along the way?</li>
-  </ul>
-
-  <h3>What makes it special</h3>
-  <ul>
-    <li>What do you want guests to feel when they arrive here?</li>
-    <li>What do guests say when they leave?</li>
-    <li>What can guests get here that they can't get anywhere else nearby?</li>
-  </ul>
-
-  <h3>The practical stuff</h3>
-  <ul>
-    <li>What's included in the price? (Breakfast? Transfers? Activities?)</li>
-    <li>What's check-in / check-out?</li>
-    <li>What activities do you offer on-site?</li>
-    <li>What's nearby that you can arrange? (safari, horse riding, day trips)</li>
-    <li>Do you have a pet / family members / staff involved?</li>
-  </ul>
-
-  <h3>Honest expectations</h3>
-  <ul>
-    <li>What should guests know before they arrive? (cold showers? no restaurant nearby? nature very close?)</li>
-    <li>Who is this place <em>not</em> for?</li>
-  </ul>
-
-  <h3>Booking logistics</h3>
-  <ul>
-    <li>What's your WhatsApp number?</li>
-    <li>What message do you want guests to send when they inquire?</li>
-    <li>Do you have a minimum stay?</li>
-    <li>Do you have seasonal pricing?</li>
-  </ul>
-
-  <h3>Reviews</h3>
-  <ul>
-    <li>Are you on Airbnb / Booking / TripAdvisor?</li>
-    <li>Can I use real quotes from your reviews on the website?</li>
-    <li>What's your star rating and approximate review count?</li>
-  </ul>
-
-  <h3>Social / contacts</h3>
-  <ul>
-    <li>Do you have Instagram or Facebook?</li>
-    <li>Do you want a contact email on the site?</li>
-  </ul>
-
-  <!-- PHASE 5 -->
-  <div class="phase page-break">
-    <div class="phase-number">Phase 5</div>
-    <div class="phase-title">Photography</div>
-  </div>
+  <h2>Photography</h2>
   <p>Shoot across the stay, not all at once. <strong>Golden hour (6–8am, 4–6pm) is mandatory for outdoor shots.</strong></p>
 
-  <h3>Must-have shots</h3>
-
-  <table>
-    <tr><th>Category</th><th>What to capture</th><th>Count</th></tr>
-    <tr><td><strong>Hero / establishing</strong></td><td>Full property from distance — golden hour, landscape in context</td><td>2–3</td></tr>
-    <tr><td><strong>The setting</strong></td><td>Lake, garden, orchard, jungle, view. Mist, fruit, animals. Atmosphere.</td><td>4–6</td></tr>
-    <tr><td><strong>Exterior</strong></td><td>Building from outside, entrance/door, veranda, path to the room</td><td>3–4</td></tr>
-    <tr><td><strong>Interior — room</strong></td><td>Full room from doorway, the bed (clean linen), unique feature, seating area</td><td>4–6</td></tr>
-    <tr><td><strong>Bathroom</strong></td><td>Full shot + feature shot if unusual (open-air, outdoor shower, vessel sink)</td><td>2–3</td></tr>
-    <tr><td><strong>Food</strong></td><td>Full breakfast spread, close-up of local dish, fresh produce from the land</td><td>4–6</td></tr>
-    <tr><td><strong>The host</strong></td><td>Candid portrait while doing something — tending farm, pouring tea, working</td><td>2–3</td></tr>
-    <tr><td><strong>Activities</strong></td><td>Kayaking, safari, hiking, pool — whatever's available. 1–2 per activity.</td><td>3–6</td></tr>
-    <tr><td><strong>Details</strong></td><td>Fruit on tree, textures, morning light, architecture — fill grids with these</td><td>5–10</td></tr>
-  </table>
-
-  <h4>Technical notes</h4>
-  <ul>
-    <li><strong>Landscape (horizontal)</strong> for hero images, split sections, and photo grids</li>
-    <li><strong>Portrait (vertical)</strong> for bathroom shots and some room details</li>
-    <li>No harsh noon sun — shoot in shade or wait for golden hour</li>
-    <li>Don't over-edit — natural colors, just lift shadows slightly</li>
-    <li>Optimize to 200–400KB per image before uploading (use <strong>squoosh.app</strong>)</li>
-  </ul>
-
-  <!-- PHASE 6 -->
-  <div class="phase page-break">
-    <div class="phase-number">Phase 6</div>
-    <div class="phase-title">Building the Site</div>
+  <div class="cols cols-3">
+    <div>
+      <h3>Must-haves</h3>
+      <ul>
+        <li><strong>Hero</strong> — full property, distance, golden hour</li>
+        <li><strong>Setting</strong> — lake, garden, nature, atmosphere</li>
+        <li><strong>Exterior</strong> — building + entrance + veranda</li>
+        <li><strong>Room</strong> — from doorway (zoomed out), bed, unique feature</li>
+        <li><strong>Bathroom</strong> — full shot + feature if unusual</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Story shots</h3>
+      <ul>
+        <li><strong>Host</strong> — candid, doing something, not posed</li>
+        <li><strong>Food</strong> — full breakfast spread + close-up of local dish</li>
+        <li><strong>Activities</strong> — kayak, safari, bikes (1–2 per activity)</li>
+        <li><strong>Details</strong> — fruit on tree, textures, morning light</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Technical</h3>
+      <ul>
+        <li>Landscape for heroes + grids</li>
+        <li>Portrait for bathroom + room detail</li>
+        <li>No harsh noon sun</li>
+        <li>Natural colors — just lift shadows</li>
+        <li>Optimize to 200–400KB (<strong>squoosh.app</strong>)</li>
+      </ul>
+    </div>
   </div>
 
-  <h3>The stack</h3>
+  <hr>
+
+  <h2>Stack</h2>
   <table>
     <tr><th>Layer</th><th>Choice</th><th>Why</th></tr>
-    <tr><td><strong>HTML/CSS/JS</strong></td><td>Vanilla — no framework</td><td>No build step; owner can edit directly</td></tr>
-    <tr><td><strong>Fonts</strong></td><td>Cormorant Garamond + Inter</td><td>Boutique/editorial feel</td></tr>
-    <tr><td><strong>Hosting</strong></td><td>GitHub Pages</td><td>Free, reliable, HTTPS auto-provisioned</td></tr>
-    <tr><td><strong>Domain</strong></td><td>Namecheap / local registrar</td><td>~$10–20/yr</td></tr>
-    <tr><td><strong>Booking CTA</strong></td><td>WhatsApp <code>wa.me/</code> link</td><td>No integration needed</td></tr>
-    <tr><td><strong>Map</strong></td><td>Google Maps embed</td><td>Free, no API key for basic embed</td></tr>
-    <tr><td><strong>Reviews</strong></td><td>Static HTML, copy from Airbnb</td><td>No third-party widget</td></tr>
+    <tr><td><strong>Code</strong></td><td>Vanilla HTML/CSS/JS — no framework</td><td>No build step. Owner can edit directly.</td></tr>
+    <tr><td><strong>Fonts</strong></td><td>Cormorant Garamond + Inter (Google Fonts)</td><td>Boutique editorial feel</td></tr>
+    <tr><td><strong>Hosting</strong></td><td>GitHub Pages</td><td>Free, HTTPS auto-provisioned</td></tr>
+    <tr><td><strong>Domain</strong></td><td>Namecheap / Cloudflare / local registrar</td><td>~$10–20/yr. First year on you.</td></tr>
+    <tr><td><strong>Booking</strong></td><td>WhatsApp <code>wa.me/</code> pre-fill link</td><td>Zero integration — one tap to inquire</td></tr>
+    <tr><td><strong>Reviews</strong></td><td>Static HTML — copy from Airbnb/TripAdvisor</td><td>No widget, no dependency</td></tr>
   </table>
 
-  <h3>Page structure — the 4-page model</h3>
+  <h3>4-page model</h3>
   <table>
-    <tr><th>Page</th><th>File</th><th>What's on it</th></tr>
-    <tr><td><strong>Homepage</strong></td><td><code>index.html</code></td><td>Hero, welcome, host intro, rooms teaser, setting, activities, food, reviews, contact + map</td></tr>
-    <tr><td><strong>The Room</strong></td><td><code>rooms.html</code></td><td>Full-width photo slider, specs, amenities list, honest note, book CTA</td></tr>
-    <tr><td><strong>The Place</strong></td><td><code>place.html</code></td><td>Hero, photo grids, setting, activities, food carousel, book CTA</td></tr>
-    <tr><td><strong>Our Story</strong></td><td><code>story.html</code></td><td>3-act narrative: Before → Crisis/change → Now. Pull quote. "See the rooms" bridge.</td></tr>
-  </table>
-  <p>A minimal build can compress to <strong>1 page</strong> (everything on index.html). Use 4 pages for richer properties.</p>
-
-  <h3>Homepage — section by section</h3>
-  <table>
-    <tr><th>Section</th><th>What it does</th><th>Key element</th></tr>
-    <tr><td>Nav</td><td>Logo + links + Book Direct button</td><td>WhatsApp link on the button</td></tr>
-    <tr><td>Hero</td><td>Full-viewport photo + property name + tagline</td><td>CTA button "See the rooms"</td></tr>
-    <tr><td>Welcome</td><td>2-column: copy left, photo right</td><td>Sets the scene in 3 sentences</td></tr>
-    <tr><td>Meet the host</td><td>2-column: photo left, copy right</td><td>Host quote in italic</td></tr>
-    <tr><td>Rooms teaser</td><td>3-photo grid → links to rooms page</td><td>Main (veranda/exterior) + 2 side (bed, bathroom)</td></tr>
-    <tr><td>The setting</td><td>2-column: photo + copy</td><td>Lake / garden / nature</td></tr>
-    <tr><td>Activities</td><td>3-column cards with photos</td><td>Distance badge overlay</td></tr>
-    <tr><td>Food</td><td>2-column: copy + photo</td><td>Breakfast / local food</td></tr>
-    <tr><td>Reviews</td><td>Rotating quotes + star rating</td><td>Gold stars + platform count</td></tr>
-    <tr><td>Find Us</td><td>Dark bg: address + WhatsApp + map</td><td>Google Maps iframe</td></tr>
-    <tr><td>Floating button</td><td>Fixed bottom-right, always visible</td><td>WhatsApp icon</td></tr>
+    <tr><th>Page</th><th>What's on it</th></tr>
+    <tr><td><strong>index.html</strong> — Home</td><td>Hero · welcome · host intro · rooms teaser · setting · activities · food · reviews · map + contact</td></tr>
+    <tr><td><strong>rooms.html</strong> — The Room</td><td>Full-width photo slider · specs · amenities · honest note · book CTA</td></tr>
+    <tr><td><strong>place.html</strong> — The Setting</td><td>Hero · photo grids · nature · activities · food carousel · book CTA</td></tr>
+    <tr><td><strong>story.html</strong> — Our Story</td><td>3-act narrative: Before → Crisis → Now. Pull quote. "See the rooms" bridge.</td></tr>
   </table>
 
-  <h3>Design system</h3>
-  <pre><code>:root {
-  --bg:       #f0ede4;   /* warm linen — main background */
-  --bg-alt:   #e8e2d6;   /* alternating sections */
-  --bg-dark:  #1b3826;   /* deep forest green — CTAs, footer */
-  --text:     #18180f;   /* near-black */
-  --muted:    #6b6856;   /* body copy, labels */
-  --wa-green: #25d366;   /* WhatsApp button */
-
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
-}</code></pre>
-
-  <p>Change <code>--bg-dark</code> to match the property's character:</p>
-  <table>
-    <tr><th>Setting</th><th>Color</th><th>Hex</th></tr>
-    <tr><td>Farm / jungle</td><td>Deep green</td><td><code>#1b3826</code></td></tr>
-    <tr><td>Desert / arid</td><td>Warm terracotta</td><td><code>#7a3b2e</code></td></tr>
-    <tr><td>Coastal</td><td>Navy</td><td><code>#1a2e4a</code></td></tr>
-    <tr><td>Vineyard</td><td>Burgundy</td><td><code>#4a1e2e</code></td></tr>
-  </table>
-
-  <h3>WhatsApp CTA — the most important element</h3>
-  <p>Put this on every page: floating button, nav button, dark footer section. Pre-fill the message.</p>
-  <pre><code>https://wa.me/[COUNTRY_CODE][NUMBER]?text=Hi%20[Name]%2C%20I%20found%20your%20farm%20online%20and%20I%27d%20love%20to%20book%20a%20stay.%20Could%20you%20tell%20me%20about%20availability%3F</code></pre>
-
-  <h3>Reviews carousel</h3>
-  <ul>
-    <li>Store 5–6 real quotes in a JS array: <code>{ text: "...", author: "Name, Country" }</code></li>
-    <li>Pull exact quotes from Airbnb/TripAdvisor reviews</li>
-    <li>Show ★★★★★ in gold (<code>#c8952e</code>) + platform count below</li>
-    <li>Rotate on dot click with opacity fade</li>
-  </ul>
-
-  <!-- PHASE 7 -->
-  <div class="phase page-break">
-    <div class="phase-number">Phase 7</div>
-    <div class="phase-title">Domain &amp; Deployment</div>
-  </div>
-
-  <h3>GitHub Pages setup</h3>
-  <ol>
-    <li>Create a public repo: <code>[property-slug]</code> (e.g. <code>ajis-mango-farm</code>)</li>
-    <li>Push all files to the <code>main</code> branch</li>
-    <li>Go to repo Settings → Pages → Source: <code>main</code> / <code>/ (root)</code> → Save</li>
-    <li>GitHub gives you: <code>[username].github.io/[repo-name]</code></li>
-  </ol>
-
-  <h3>Custom domain — DNS records</h3>
-  <p>Add these 4 A records + 1 CNAME in the registrar's DNS settings:</p>
-  <pre><code>A    @    185.199.108.153
+  <h3>DNS records (GitHub Pages)</h3>
+  <pre>A    @    185.199.108.153
 A    @    185.199.109.153
 A    @    185.199.110.153
 A    @    185.199.111.153
-CNAME  www  [username].github.io</code></pre>
-  <p>Then in GitHub Pages settings → Custom domain → enter the domain → Save.<br>HTTPS auto-provisions within ~1 hour after DNS propagates.</p>
+CNAME  www  [username].github.io</pre>
+</div>
 
-  <h3>CNAME file</h3>
-  <p>Create a file called <code>CNAME</code> in the repo root with one line — the domain:</p>
-  <pre><code>your-domain.com</code></pre>
+<!-- PAGE 4 — PROMPTS + TIPS -->
+<div class="page">
+  <div class="page-title">The Playbook — Part 3</div>
 
-  <h3>Where to buy domains</h3>
-  <table>
-    <tr><th>Registrar</th><th>Best for</th><th>Cost</th></tr>
-    <tr><td>Namecheap.com</td><td>.com / .co / .net</td><td>~$10–15/yr</td></tr>
-    <tr><td>Cloudflare.com</td><td>.com (cheapest, at-cost pricing)</td><td>~$8–10/yr</td></tr>
-    <tr><td>Local registrar</td><td>Country TLD (.lk, .co.il, etc.)</td><td>~$15–30/yr</td></tr>
-  </table>
+  <h2>Claude Prompts</h2>
+  <p>Use Claude Code to vibe code the site. These prompts build the full thing from scratch.</p>
 
-  <!-- PHASE 8 -->
-  <div class="phase">
-    <div class="phase-number">Phase 8</div>
-    <div class="phase-title">Handoff</div>
-  </div>
-  <p>The owner gets everything. Walk them through it in person or on a call.</p>
-  <ul>
-    <li>GitHub repo URL (public — they can clone or fork)</li>
-    <li><code>OWNER-GUIDE.md</code> — plain-English instructions for updating text and photos</li>
-    <li>Domain credentials (transfer to their registrar account if bought for them)</li>
-    <li>WhatsApp number confirmed working in all booking CTAs</li>
-    <li>HTTPS confirmed active</li>
-    <li>Owner added as GitHub collaborator with push access</li>
-  </ul>
-  <p><strong>README to write in the repo:</strong> What the site is, the page structure, photo inventory (which photo is in which slot), how to update, Claude Code instructions for future AI-assisted edits.</p>
+  <h3>1. Kick off the build</h3>
+  <div class="prompt">Build a 4-page static website for [PLACE NAME] — a [brief description, e.g. "fruit farm with lakeside cottages in Sri Lanka"].
 
-  <!-- COST & TIME -->
-  <div class="phase page-break">
-    <div class="phase-number">Reference</div>
-    <div class="phase-title">Time &amp; Cost</div>
-  </div>
+Stack: pure HTML/CSS/vanilla JS, no framework, no build step.
+Fonts: Cormorant Garamond (display) + Inter (body) via Google Fonts.
+Colors: warm linen background #f0ede4, deep [green/terracotta/navy] #1b3826 for CTAs and footer, near-black #18180f text.
 
-  <table class="cost-row">
-    <tr><th>Item</th><th>Time</th><th>Your cost</th></tr>
-    <tr><td>Interview</td><td>1–2 hours</td><td>—</td></tr>
-    <tr><td>Photography</td><td>2–4 hours</td><td>—</td></tr>
-    <tr><td>Photo editing / resize</td><td>1–2 hours</td><td>—</td></tr>
-    <tr><td>Building (simple, 1-page)</td><td>4–8 hours</td><td>—</td></tr>
-    <tr><td>Building (4-page model)</td><td>12–20 hours</td><td>—</td></tr>
-    <tr><td>Domain (first year)</td><td>—</td><td>$10–30</td></tr>
-    <tr><td>Hosting (GitHub Pages)</td><td>—</td><td>Free</td></tr>
-    <tr><td style="border-top: 2px solid var(--dark);"><strong>Total you cover</strong></td><td style="border-top: 2px solid var(--dark);">~16–28 hours</td><td style="border-top: 2px solid var(--dark);"><strong>~$10–30</strong></td></tr>
-  </table>
-  <p style="color: var(--muted); font-style: italic;">A 3-night stay at a $50/night guesthouse = $150 of value for ~$20 in costs.</p>
+Pages: index.html (homepage), rooms.html (accommodation), place.html (the setting), story.html (owner story).
 
-  <!-- LESSONS -->
-  <div class="phase">
-    <div class="phase-number">From Stay #1</div>
-    <div class="phase-title">Lessons from Aji Fruit Farm</div>
-  </div>
+WhatsApp number: [NUMBER in international format, no +]
+Booking message: "Hi [Name], I found your place online and I'd love to book a stay. Could you tell me about availability?"
+
+Put a floating WhatsApp button (fixed bottom-right) and a "Book Direct" nav button on every page.</div>
+
+  <h3>2. Fill in the content</h3>
+  <div class="prompt">Here's the content for each section. Fill in all placeholders:
+
+Owner: [NAME]. Story: [paste interview notes — origin, crisis, turning point, now].
+What makes it special: [key quotes from owner].
+What's included: [list].
+Honest note for rooms page: "[e.g. Cold water showers. Nature is very close. Not a resort.]"
+Reviews: [paste 5–6 real quotes from Airbnb/TripAdvisor with author name and country].
+Location for map embed: [address or coordinates].
+Activities nearby: [list with distances].</div>
+
+  <h3>3. Place the photos</h3>
+  <div class="prompt">Photos are in /photos/. Place them as follows:
+- Hero image: [filename]
+- Homepage welcome section: [filename]
+- Host photo: [filename]
+- Rooms teaser main (veranda/exterior): [filename]
+- Rooms teaser side top (bed): [filename]
+- Rooms teaser side bottom (bathroom): [filename]
+- Room slider: [list 8–12 filenames]
+- Food carousel: [list 4–6 filenames]
+
+Add loading="lazy" to all images. Optimize with background: #e8e2d6 as placeholder.</div>
+
+  <h3>4. Deploy</h3>
+  <div class="prompt">Create a CNAME file with one line: [domain.com]
+Push to GitHub. Repo name: [property-slug].
+Enable GitHub Pages: Settings → Pages → main / root.
+Then walk me through the DNS records to add at [registrar name].</div>
+
+  <hr>
+
+  <h2>Tips</h2>
 
   <div class="tips">
-    <div class="tips-label">What we learned</div>
+    <div class="tips-label">What actually matters</div>
     <ul>
-      <li><strong>Get the real story.</strong> The most compelling copy comes directly from the owner's words — especially the crisis/turning-point chapter. Don't write generic "welcome to our beautiful property" copy.</li>
-      <li><strong>Cold showers = a feature, not a bug.</strong> Honest expectations build trust. Put the disclaimer directly on the rooms page — it pre-qualifies visitors and reduces disappointment.</li>
-      <li><strong>WhatsApp pre-fills convert.</strong> The booking message should be pre-written and URL-encoded. Visitors send it with one tap.</li>
-      <li><strong>4 pages beat 1 page.</strong> The 4-page model lets each page tell a complete story. The story page drives emotional connection. Guests who read it become bookers.</li>
-      <li><strong>Never use close-up abstract shots as teaser images.</strong> Every photo in a grid must answer one of: <em>What does the setting look like? What is the room like? What makes it unique?</em> A blurry door handle answers none of these.</li>
-      <li><strong>Review quotes need to be real.</strong> Copy exact quotes from Airbnb/TripAdvisor. Attribution ("— Momoyo, Japan") makes them credible.</li>
-      <li><strong>Roles stay clean.</strong> Photographer doesn't code. Builder doesn't art-direct the shots.</li>
+      <li><strong>Get the real story.</strong> Owner's own words — especially the crisis/turning-point chapter — is your best copy. Never write generic "welcome to our beautiful property."</li>
+      <li><strong>WhatsApp pre-fills convert.</strong> Write the booking message for them. URL-encode it. One tap to inquire. Put it everywhere: floating button, nav, dark footer on every page.</li>
+      <li><strong>Honest expectations build trust.</strong> Put the "cold showers / no restaurant / nature is close" note directly on the rooms page. It pre-qualifies and reduces disappointment.</li>
+      <li><strong>Story page is the secret weapon.</strong> Before → crisis → now. Guests who read it become bookers. Don't skip it.</li>
+      <li><strong>Every teaser photo must answer a real question.</strong> "What does the room look like? What's the setting?" A close-up of a door handle answers nothing. Use exterior shots, beds, landscape.</li>
+      <li><strong>Country-code domains add credibility.</strong> <code>.lk</code>, <code>.co.il</code>, <code>.co.ke</code> — cheap and local. Check the local registrar.</li>
+      <li><strong>Reviews need attribution.</strong> "— Momoyo, Japan" makes a quote credible. "— Guest" does not.</li>
     </ul>
   </div>
 
-  <!-- REFERENCE -->
-  <h2>Quick Reference</h2>
-
-  <h3>GitHub Pages IP addresses</h3>
-  <pre><code>185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153</code></pre>
-
-  <h3>Google Fonts import</h3>
-  <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" /&gt;</code></pre>
-
-  <h3>Google Maps embed</h3>
-  <pre><code>&lt;iframe
-  src="https://maps.google.com/maps?q=[LOCATION]&t=&z=13&ie=UTF8&iwloc=&output=embed"
-  width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"&gt;
-&lt;/iframe&gt;</code></pre>
-
-  <h3>Photo optimization</h3>
-  <ul>
-    <li>Target: <strong>200–400KB per image</strong></li>
-    <li>Format: JPG for photos, SVG for icons</li>
-    <li>Max dimensions: 2400px wide for hero, 1600px for others</li>
-    <li>Tool: <strong>squoosh.app</strong> — free, browser-based, no install</li>
-  </ul>
-
-  <hr>
-  <p style="text-align:center; color: var(--muted); font-size:9pt; margin-top: 40px;">Stay Barters &nbsp;·&nbsp; github.com/yfelig/stay-barters &nbsp;·&nbsp; May 2026</p>
-
+  <p style="text-align:center; color: var(--muted); font-size:8pt; margin-top: 32px;">Stay Barters &nbsp;·&nbsp; github.com/yfelig/stay-barters &nbsp;·&nbsp; May 2026</p>
 </div>
+
 </body>
 </html>
